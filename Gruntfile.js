@@ -4,5 +4,7 @@ module.exports = function (grunt) {
 
     require('load-grunt-config')(grunt);
 
-    grunt.registerTask('default', ['jslint', 'karma']);
+    grunt.registerTask('gates', ['jslint', 'karma']);
+    grunt.registerTask('travis', ['gates', 'coveralls']);
+    grunt.registerTask('default', 'gates');
 };
